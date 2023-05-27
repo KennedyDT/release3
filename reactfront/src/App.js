@@ -1,29 +1,21 @@
-
-import './App.css';
-import 'babel-polyfill';
-
+import './customcss/style.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import ShowProductos from './componentes/ShowProductos';
-import CreatePoductos from './componentes/CreateProductos';
-import EditPoductos from './componentes/EditProductos';
+//importar nuestros componentes
+import ShowProducts from './components/ShowProducts';
+import CreateProduct from './components/CreateProduct';
+import EditProduct from './components/EditProduct';
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
-      <Routes>
-        <Route path='/' element={<ShowProductos/> } />
-        <Route path='/create' element={<CreatePoductos/> } />
-        <Route path='/edit/:id' element={<EditPoductos/> } />
-
-      </Routes>
-      
-      </BrowserRouter>
-     
-      
-       
-      
+        <Routes>
+          <Route path='/' element={ <ShowProducts/> } />
+          <Route path='/create' element={ <CreateProduct/> } />
+          <Route path='/edit/:id' element={ <EditProduct/> } />
+        </Routes>
+      </BrowserRouter>      
     </div>
   );
 }

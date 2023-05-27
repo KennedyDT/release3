@@ -75,7 +75,7 @@ const CreateProduct = () => {
                     className='form-control'
                 />
             </div>
-            <button type='submit' className='btn btn-primary'>Store</button>
+            <button type='submit' className='btn btn-primary'>actualizar</button>
         </form>
     </div>
   )

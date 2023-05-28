@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
+
+    /*
     public function index()
     {
         $productos=Productos::all();
@@ -62,6 +64,7 @@ class ProductosController extends Controller
         return $productos;
     }
 
+    */
 
 
 
@@ -76,7 +79,7 @@ class ProductosController extends Controller
 
 
 
-    /* prueba para la api
+
     public function __construct()
     {
 
@@ -180,7 +183,7 @@ class ProductosController extends Controller
 
 
     }
-    */
+
 
 
 

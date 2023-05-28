@@ -12,55 +12,55 @@ use Illuminate\Support\Facades\Storage;
 
 class ProductosController extends Controller
 {
-   
+
     public function index()
     {
-        $productos= productos::all();
+        $productos = Productos::all();
         return $productos;
-       
     }
 
-   
+    public function create()
+    {
+        //
+    }
+
     public function store(Request $request)
     {
-        $producto=new Productos();
-        $producto->Nombre=$request->Nombre;
-        $producto->Marca=$request->Marca;
-        $producto->Descripcion=$request->Descripcion;
-        $producto->Cantidad=$request->Cantidad;
-        $producto->Precio=$request->Precio;
+        $producto = new Productos();
+        $producto->Nombre = $request->Nombre;
+        $producto->Marca = $request->Marca;
+        $producto->Descripcion = $request->Descripcion;
+        $producto->Cantidad = $request->Cantidad;
+        $producto->Precio = $request->Precio;
         $producto->save();
-        //$productos=Productos::all();
-        //return $producto;
+        $productos = Productos::all();
+        return $productos;
 
-       
     }
 
-    
     public function show($id)
     {
-        $producto=productos::find($id);
-        return $producto;
-       
+        //
     }
 
-    
+
+    public function edit($id)
+    {
+        //
+    }
+
+
     public function update(Request $request, $id)
     {
-        $producto= productos::findOrfail($request->id);
-        $producto->Nombre=$request->Nombre;
-        $producto->Marca=$request->Marca;
-        $producto->Descripcion=$request->Descripcion;
-        $producto->Cantidad=$request->Cantidad;
-        $producto->Precio=$request->Precio;
-        $producto->save();
-        return $producto;
+        //
     }
 
-   
+
     public function destroy($id)
     {
-       $producto=product::destroy($id);
-       return $producto;
+        $producto = Productos::find($id);
+        $producto->delete();
+        $productos = Productos::all();
+        return $productos;
     }
 }
